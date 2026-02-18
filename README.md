@@ -38,7 +38,7 @@
 
 ---
 
-### 4. Cross Math (Unity)
+### 4. [VR] Cross Math (Unity)
 > 2020.07 — 2024.07 | 2인  
 > VR 프레임워크 / Mesh Cut / UI 및 연출 설계
 
