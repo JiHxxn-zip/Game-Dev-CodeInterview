@@ -19,19 +19,13 @@
 ---
 
 ### [1. Quest System](./Quest_System.md)
-<sub>
-JSON 기반 데이터 드리븐 구조와 이벤트 기반 Objective 갱신 구조를 통해<br>
-새로운 퀘스트 타입을 코드 수정 최소화로 확장할 수 있도록 설계했습니다.
-</sub>
+> JSON 기반 데이터 드리븐 구조와 이벤트 기반 Objective 갱신 구조를 통해<br>
+> 새로운 퀘스트 타입을 코드 수정 최소화로 확장할 수 있도록 설계했습니다.
 
 ### [2. Glasgavelen Boss AI](./Glasgavelen_Boss_AI.md)
-<sub>
-20개 이상의 상태 클래스로 FSM을 구성하고,<br>
-페이즈 전환 시 패턴 큐를 교체하는 방식으로 보스 전투 흐름을 구조화했습니다.
-</sub>
+> 20개 이상의 상태 클래스로 FSM을 구성하고,<br>
+> 페이즈 전환 시 패턴 큐를 교체하는 방식으로 보스 전투 흐름을 구조화했습니다.
 
 ### [3. Hit / Collider Framework](./Hit_Collider_Framework.md)
-<sub>
-TriggerCollider, PhysicsCollider, Rigidbody를 분리하여<br>
-전투 판정과 물리 충돌 책임을 명확히 분리했습니다.
-</sub>
+> TriggerCollider, PhysicsCollider, Rigidbody를 분리하여<br>
+> 전투 판정과 물리 충돌 책임을 명확히 분리했습니다.
