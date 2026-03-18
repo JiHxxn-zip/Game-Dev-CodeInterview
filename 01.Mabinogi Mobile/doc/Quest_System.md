@@ -1,1 +1,38 @@
+# Quest System
+
+## Overview
+이 시스템은 JSON 기반 퀘스트 데이터를 로드한 뒤,
+현재 활성화된 Objective에 대해서만 이벤트를 전달하고,
+각 Objective가 이벤트 필터링, 진행도 반영, 완료 판정을 나누어 처리하는 구조로 설계했습니다.
+
+`CQuest_Manager`는 퀘스트 데이터 로드와 Objective 생성을 담당하고,
+`CQuest`는 현재 진행 중인 Objective 선택과 보상 처리를 맡으며,
+`CObjective` 파생 클래스는 퀘스트 타입별 조건 해석 로직을 담당합니다.
+
+## Core Design
+- `CQuest_Manager`
+  - JSON 파일 재귀 로드
+  - `strQuestType`에 따라 Objective 인스턴스 생성
+  - 외부 시스템에 `Activate`, `NotifyEvent` 인터페이스 제공
+
+- `CQuest`
+  - Objective 목록 보관
+  - 현재 활성 Objective 관리
+  - 완료 시 상태 전환, UI 연출, 보상 지급 처리
+
+- `CObjective`
+  - `MatchesEvent` : 이 이벤트를 처리할지 판정
+  - `OnEvent` : 진행도 반영
+  - `IsCompleted` : 완료 조건 판정
+  - `Activate`, `IsActivated` : 활성 상태 제어
+ 
+```mermaid
+flowchart LR
+    Event[Game Event 발생] --> Manager[Quest_Manager::NotifyEvent]
+    Manager --> Quest[Quest::NotifyEvent]
+    Quest --> CheckActive{Current Objective Active?}
+    CheckActive -->|Yes| Match[MatchesEvent]
+    Match -->|Matched| Update[OnEvent]
+    Update --> Complete{IsCompleted}
+    Complete -->|Yes| Reward[Reward / UI 처리]
 
