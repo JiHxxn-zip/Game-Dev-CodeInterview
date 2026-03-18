@@ -131,7 +131,7 @@ void CQuest::NotifyEvent(const wstring& type, const wstring& value)
 > - 현재 진행 중인 Objective가 아니면 처리하지 않음
 > - Objective가 이벤트를 받을 수 있는 상태인지 먼저 확인  
 > - 이벤트 타입이 일치할 때만 진행도 갱신  
-> - 완료 시에만 후속 처리 실행   
+> - 완료 시에만 후속 처리 실행  
 > 즉, 이벤트 전달은 공통화하고, 이벤트 해석은 Objective에 위임하는 구조입니다.
 ---
 ## 4. Quest: Objective Activation
@@ -198,7 +198,7 @@ protected:
     _bool m_bActived = {};
 };
 ```
-> 공통적으로 상태와 퀘스트 데이터를 보유하고,
+> 공통적으로 상태와 퀘스트 데이터를 보유하고,  
 > 이벤트 일치 여부 및 진행도 반영과 완료 판정을 파생 클래스가 각각 구현하도록 설계했습니다.
 ---
 ## 6. Example: MonsterKill Objective
@@ -271,7 +271,7 @@ if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsComplete
     }
 }
 ```
-> 현재 구조에서는 Objective 완료 후의 후속 처리를 CQuest가 담당하고 있으며,
+> 현재 구조에서는 Objective 완료 후의 후속 처리를 CQuest가 담당하고 있으며,  
 > 장기적으로는 UI 처리와 보상 처리를 별도 시스템으로 분리해 책임을 더 명확히 나눌 수 있습니다.
 ---
 # Design Notes
