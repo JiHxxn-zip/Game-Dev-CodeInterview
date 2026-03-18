@@ -36,3 +36,30 @@ flowchart LR
     Update --> Complete{IsCompleted}
     Complete -->|Yes| Reward[Reward / UI 처리]
 
+## Key Code Walkthrough
+
+### 1. Quest Manager: JSON Load & Objective Creation
+
+`CQuest_Manager`는 퀘스트 시스템의 진입점 역할을 하며,  
+초기화 시 JSON 파일을 재귀적으로 읽고 Objective 인스턴스를 생성합니다.
+
+```cpp
+HRESULT CQuest_Manager::Initialize()
+{
+    m_pQuest = CQuest::Create();
+
+    Load_Json(L"../Bin/DataFiles/Json/Quest");
+
+    return S_OK;
+}
+
+HRESULT CQuest_Manager::Load_Json(const wstring& folderPath)
+{
+    for (const auto& entry : fs::recursive_directory_iterator(folderPath))
+    {
+        if (entry.is_regular_file())
+            Load_SingleScript(entry.path().wstring());
+    }
+
+    return S_OK;
+}
