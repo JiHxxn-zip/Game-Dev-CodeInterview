@@ -66,7 +66,7 @@ HRESULT CQuest_Manager::Load_Json(const wstring& folderPath)
 > 이 구조를 통해 퀘스트 데이터는 코드와 분리되어 관리되며,  
 > 폴더 단위로 JSON을 추가하는 방식으로 콘텐츠를 확장할 수 있습니다.
 ---
-2. Quest Manager: Objective Type Dispatch
+## 2. Quest Manager: Objective Type Dispatch
 > 로드된 JSON은 strQuestType 값에 따라 서로 다른 Objective 클래스로 생성됩니다.
 ```cpp
 HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
@@ -101,5 +101,36 @@ HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
     return S_OK;
 }
 ```
-> 현재는 문자열 분기 방식으로 Objective를 생성하고 있으며,
+> 현재는 문자열 분기 방식으로 Objective를 생성하고 있으며,  
 > 새로운 퀘스트 타입을 추가할 때는 파생 Objective 클래스와 생성 분기만 추가하면 됩니다.
+---
+## 3. Quest: Event Dispatch to Current Objective
+```cpp
+void CQuest::NotifyEvent(const wstring& type, const wstring& value)
+{
+    if (m_pCurrentObjective == nullptr)
+        return;
+
+    if (m_pCurrentObjective->Get_CurrentState() == EQuestState::REWARD)
+        return;
+
+    if (!m_pCurrentObjective->IsActivated())
+        return;
+
+    if (!m_pCurrentObjective->MatchesEvent(type, value))
+        return;
+
+    if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsCompleted())
+    {
+        m_pCurrentObjective->Set_CurrentState(EQuestState::REWARD);
+        ...
+    }
+}
+```
+> 이 흐름에서 중요한 점은 다음과 같습니다.
+> - 현재 진행 중인 Objective가 아니면 처리하지 않음
+> - Objective가 이벤트를 받을 수 있는 상태인지 먼저 확인  
+> - 이벤트 타입이 일치할 때만 진행도 갱신  
+> - 완료 시에만 후속 처리 실행  
+> 즉, 이벤트 전달은 공통화하고, 이벤트 해석은 Objective에 위임하는 구조입니다.
+---
