@@ -40,7 +40,7 @@ flowchart LR
 ```
 
 ## 1. Quest Manager: JSON Load & Objective Creation
-> CQuest_Manager는 퀘스트 시스템의 진입점 역할을 하며,
+> CQuest_Manager는 퀘스트 시스템의 진입점 역할을 하며,  
 > 초기화 시 JSON 파일을 재귀적으로 읽고 Objective 인스턴스를 생성합니다.
 ```cpp
 HRESULT CQuest_Manager::Initialize()
@@ -63,3 +63,43 @@ HRESULT CQuest_Manager::Load_Json(const wstring& folderPath)
     return S_OK;
 }
 ```
+> 이 구조를 통해 퀘스트 데이터는 코드와 분리되어 관리되며,  
+> 폴더 단위로 JSON을 추가하는 방식으로 콘텐츠를 확장할 수 있습니다.
+---
+2. Quest Manager: Objective Type Dispatch
+> 로드된 JSON은 strQuestType 값에 따라 서로 다른 Objective 클래스로 생성됩니다.
+```cpp
+HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
+{
+    json j;
+    if (FAILED(CJson_Manager::GetInstance()->Load_Json(filePath, j)))
+        return E_FAIL;
+
+    QUEST_DESC desc;
+    desc.FromJson(j);
+
+    CleanWString(desc.objective.strQuestType);
+
+    if (desc.objective.strQuestType == L"TalkToNPC")
+    {
+        auto pTalkObjective = make_shared<CObjective_TalkToNPC>();
+        pTalkObjective->Set_QuestDesc(desc);
+        m_pQuest->Add_Objective(pTalkObjective);
+    }
+    else if (desc.objective.strQuestType == L"MonsterKill")
+    {
+        auto pKillObjective = make_shared<CObjective_MonsterKill>();
+        pKillObjective->Set_QuestDesc(desc);
+        m_pQuest->Add_Objective(pKillObjective);
+    }
+    else if (desc.objective.strQuestType == L"ItemUse")
+    {
+        auto pItemObjective = make_shared<CObjective_ItemUse>();
+        pItemObjective->Set_QuestDesc(desc);
+        m_pQuest->Add_Objective(pItemObjective);
+    }
+    return S_OK;
+}
+```
+> 현재는 문자열 분기 방식으로 Objective를 생성하고 있으며,
+> 새로운 퀘스트 타입을 추가할 때는 파생 Objective 클래스와 생성 분기만 추가하면 됩니다.
