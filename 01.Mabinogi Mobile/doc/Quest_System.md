@@ -286,19 +286,19 @@ if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsComplete
 > 현재 구조에서는 Objective 완료 후의 후속 처리를 CQuest가 담당하고 있으며,  
 > 장기적으로는 UI 처리와 보상 처리를 별도 시스템으로 분리해 책임을 더 명확히 나눌 수 있습니다.
 ---
-# Design Notes
+## Design Notes
 
-## 핵심
+### 핵심
 > 이 시스템에서 가장 중요하게 본 부분은
 > 이벤트를 한 곳으로 모으고, 조건 해석은 Objective에 분산하는 것 이었습니다.
 
-## 장점
+### 장점
 > - 퀘스트 데이터와 런타임 로직을 분리
 > - 활성 Objective만 처리하여 흐름 단순화
 > - 신규 퀘스트 타입을 파생 클래스로 확장 가능
 > - 공통 이벤트 진입점(NotifyEvent) 유지
 
-## 보완할 점  
+### 보완할 점  
 > - Objective 생성이 문자열 분기문에 의존하므로 팩토리 매핑으로 일반화 가능
 > - IsActivated(), IsCompleted()가 조회와 상태 변경 책임을 함께 가짐
 > - 완료 후 UI / 보상 처리 책임이 CQuest에 함께 모여 있음  
