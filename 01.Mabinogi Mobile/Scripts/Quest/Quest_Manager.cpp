@@ -82,9 +82,6 @@ HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
 
     // Null 문자 제거
     CleanWString(desc.objective.strQuestType);
-    //CleanWString(desc.objective.strNpcName);
-    //CleanWString(desc.objective.strMonsterName);
-    //CleanWString(desc.strQuestID);
 
     if (desc.objective.strQuestType == L"TalkToNPC")
     {
