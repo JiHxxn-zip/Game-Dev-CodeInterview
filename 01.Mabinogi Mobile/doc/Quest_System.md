@@ -39,7 +39,7 @@ flowchart LR
     Complete -->|Yes| Reward[Reward / UI 처리]
 ```
 
-## 1. Quest Manager: JSON Load & Objective Creation
+### 1. Quest Manager: JSON Load & Objective Creation
 > CQuest_Manager는 퀘스트 시스템의 진입점 역할을 하며,  
 > 초기화 시 JSON 파일을 재귀적으로 읽고 Objective 인스턴스를 생성합니다.
 ```cpp
@@ -65,8 +65,10 @@ HRESULT CQuest_Manager::Load_Json(const wstring& folderPath)
 ```
 > 이 구조를 통해 퀘스트 데이터는 코드와 분리되어 관리되며,  
 > 폴더 단위로 JSON을 추가하는 방식으로 콘텐츠를 확장할 수 있습니다.
+
 ---
-## 2. Quest Manager: Objective Type Dispatch
+
+### 2. Quest Manager: Objective Type Dispatch
 > 로드된 JSON은 strQuestType 값에 따라 서로 다른 Objective 클래스로 생성됩니다.
 ```cpp
 HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
@@ -103,8 +105,10 @@ HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
 ```
 > 현재는 문자열 분기 방식으로 Objective를 생성하고 있으며,  
 > 새로운 퀘스트 타입을 추가할 때는 파생 Objective 클래스와 생성 분기만 추가하면 됩니다.
+
 ---
-## 3. Quest: Event Dispatch to Current Objective
+
+### 3. Quest: Event Dispatch to Current Objective
 ```cpp
 void CQuest::NotifyEvent(const wstring& type, const wstring& value)
 {
@@ -133,8 +137,10 @@ void CQuest::NotifyEvent(const wstring& type, const wstring& value)
 > - 이벤트 타입이 일치할 때만 진행도 갱신  
 > - 완료 시에만 후속 처리 실행  
 > 즉, 이벤트 전달은 공통화하고, 이벤트 해석은 Objective에 위임하는 구조입니다.
+
 ---
-## 4. Quest: Objective Activation
+
+### 4. Quest: Objective Activation
 > 퀘스트 활성화 시점에는 questID에 해당하는 Objective를 찾아 현재 진행 상태로 전환합니다.
 ```cpp
 shared_ptr<CObjective> CQuest::ActivateObjective(const wstring& questID)
@@ -166,8 +172,10 @@ shared_ptr<CObjective> CQuest::ActivateObjective(const wstring& questID)
 ```
 > 이 구조를 통해 여러 Objective를 보관하되,
 > 실제로 이벤트를 받는 대상은 하나의 활성 Objective로 제한했습니다.
+
 ---
-## 5. Objective Base Interface
+
+### 5. Objective Base Interface
 > CObjective는 모든 퀘스트 타입이 따라야 하는 공통 인터페이스를 정의합니다.
 ```cpp
 class CObjective abstract : public CBase
@@ -200,8 +208,10 @@ protected:
 ```
 > 공통적으로 상태와 퀘스트 데이터를 보유하고,  
 > 이벤트 일치 여부 및 진행도 반영과 완료 판정을 파생 클래스가 각각 구현하도록 설계했습니다.
+
 ---
-## 6. Example: MonsterKill Objective
+
+### 6. Example: MonsterKill Objective
 > MonsterKill Objective는 이벤트 이름과 몬스터 이름이 모두 일치할 때만 반응하며,  
 > 내부 처치 카운트를 증가시켜 완료 여부를 판정합니다.
 ```cpp
@@ -235,8 +245,10 @@ _bool CObjective_MonsterKill::IsActivated()
     return m_bActived;
 }
 ```
+
 ---
-## 7. Reward Handling
+
+### 7. Reward Handling
 > Objective 완료 이후에는 CQuest가 UI 연출과 보상 지급을 처리합니다.
 ```cpp
 if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsCompleted())
