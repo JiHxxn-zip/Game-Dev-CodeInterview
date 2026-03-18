@@ -40,8 +40,8 @@ flowchart LR
 ```
 
 ### 1. Quest Manager: JSON Load & Objective Creation
-> CQuest_Manager는 퀘스트 시스템의 진입점 역할을 하며,  
-> 초기화 시 JSON 파일을 재귀적으로 읽고 Objective 인스턴스를 생성합니다.
+CQuest_Manager는 퀘스트 시스템의 진입점 역할을 하며,  
+초기화 시 JSON 파일을 재귀적으로 읽고 Objective 인스턴스를 생성합니다.
 ```cpp
 HRESULT CQuest_Manager::Initialize()
 {
@@ -69,7 +69,7 @@ HRESULT CQuest_Manager::Load_Json(const wstring& folderPath)
 ---
 
 ### 2. Quest Manager: Objective Type Dispatch
-> 로드된 JSON은 strQuestType 값에 따라 서로 다른 Objective 클래스로 생성됩니다.
+로드된 JSON은 strQuestType 값에 따라 서로 다른 Objective 클래스로 생성됩니다.
 ```cpp
 HRESULT CQuest_Manager::Load_SingleScript(const wstring& filePath)
 {
@@ -141,7 +141,7 @@ void CQuest::NotifyEvent(const wstring& type, const wstring& value)
 ---
 
 ### 4. Quest: Objective Activation
-> 퀘스트 활성화 시점에는 questID에 해당하는 Objective를 찾아 현재 진행 상태로 전환합니다.
+퀘스트 활성화 시점에는 questID에 해당하는 Objective를 찾아 현재 진행 상태로 전환합니다.
 ```cpp
 shared_ptr<CObjective> CQuest::ActivateObjective(const wstring& questID)
 {
@@ -176,7 +176,7 @@ shared_ptr<CObjective> CQuest::ActivateObjective(const wstring& questID)
 ---
 
 ### 5. Objective Base Interface
-> CObjective는 모든 퀘스트 타입이 따라야 하는 공통 인터페이스를 정의합니다.
+CObjective는 모든 퀘스트 타입이 따라야 하는 공통 인터페이스를 정의합니다.
 ```cpp
 class CObjective abstract : public CBase
 {
@@ -212,8 +212,8 @@ protected:
 ---
 
 ### 6. Example: MonsterKill Objective
-> MonsterKill Objective는 이벤트 이름과 몬스터 이름이 모두 일치할 때만 반응하며,  
-> 내부 처치 카운트를 증가시켜 완료 여부를 판정합니다.
+MonsterKill Objective는 이벤트 이름과 몬스터 이름이 모두 일치할 때만 반응하며,  
+내부 처치 카운트를 증가시켜 완료 여부를 판정합니다.
 ```cpp
 _bool CObjective_MonsterKill::MatchesEvent(const wstring& type, const wstring& value)
 {
@@ -249,7 +249,7 @@ _bool CObjective_MonsterKill::IsActivated()
 ---
 
 ### 7. Reward Handling
-> Objective 완료 이후에는 CQuest가 UI 연출과 보상 지급을 처리합니다.
+Objective 완료 이후에는 CQuest가 UI 연출과 보상 지급을 처리합니다.
 ```cpp
 if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsCompleted())
 {
@@ -293,7 +293,6 @@ if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsComplete
 > 이벤트를 한 곳으로 모으고, 조건 해석은 Objective에 분산하는 것 이었습니다.
 
 ## 장점
-> - 이를 통해 다음과 같은 장점을 얻었습니다.
 > - 퀘스트 데이터와 런타임 로직을 분리
 > - 활성 Objective만 처리하여 흐름 단순화
 > - 신규 퀘스트 타입을 파생 클래스로 확장 가능
