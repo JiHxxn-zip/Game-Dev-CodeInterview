@@ -27,7 +27,7 @@ Glasgavelen 보스는 공격 패턴 수가 많고, 각 패턴마다
 - `CGlasgavelen`
   - FSM 상태 전환과 보스 공통 데이터 관리
 
-- `GlasgavelenState*`
+- `GlasgavelenState`
   - 패턴 진입 조건과 행동 흐름 제어
   - 어떤 공격을 언제 실행할지 결정
 
