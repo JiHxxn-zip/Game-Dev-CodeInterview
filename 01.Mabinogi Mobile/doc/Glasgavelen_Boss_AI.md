@@ -175,7 +175,7 @@ void CGlasgavelenDefaultAttack::OnHit(shared_ptr<CGameObject> pTarget)
 비슷한 공격 로직이 여러 상태에 반복될 가능성이 커집니다.
 
 ---
-##Design Notes
+## Design Notes
 ### 핵심
 이 보스에서 가장 중요하게 본 부분은
 행동 결정과 공격 판정을 분리하는 것 이었습니다.
