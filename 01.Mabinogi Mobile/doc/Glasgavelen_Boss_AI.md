@@ -156,8 +156,7 @@ void CGlasgavelenDefaultAttack::OnHit(shared_ptr<CGameObject> pTarget)
     if (!pTrigger)
         return;
 
-    _float damage = 100.f;
-    DamageInfo damageInfo(m_pOwner.lock(), static_cast<_int>(damage));
+    DamageInfo damageInfo(m_pOwner.lock(), static_cast<_int>(m_iDamage));
     m_pGameInstance->Process_Hit(m_pHitColliderCom, pTarget, damageInfo);
 }
 ```
