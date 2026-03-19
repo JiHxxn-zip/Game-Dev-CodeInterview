@@ -12,6 +12,17 @@ Glasgavelen 보스는 공격 패턴 수가 많고, 각 패턴마다
 
 ---
 
+[🔗 DamageObject.h](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.h)  
+[🔗 Quest.cpp](../Scripts/Quest/Quest.cpp)
+
+[🔗 Quest_Manager.h](../Scripts/Quest/Quest_Manager.h)  
+[🔗 Quest_Manager.cpp](../Scripts/Quest/Quest_Manager.cpp)
+
+[🔗 Objective.h](../Scripts/Quest/Objective.h)  
+[🔗 Objective_MonsterKill.cpp](../Scripts/Quest/Objective_MonsterKill.cpp)
+
+---
+
 ## Core Design
 - `CGlasgavelen`
   - FSM 상태 전환과 보스 공통 데이터 관리
