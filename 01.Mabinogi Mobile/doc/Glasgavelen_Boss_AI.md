@@ -98,8 +98,7 @@ void Client::CDamageObject::Update(_float fTimeDelta)
 > - 공격 준비 시간
 > - 활성화 시점
 > - 충돌 범위
-> - 히트 처리
-를 독립적으로 관리할 수 있습니다.
+> - 히트 처리를 독립적으로 관리할 수 있습니다.
 
 --- 
 
