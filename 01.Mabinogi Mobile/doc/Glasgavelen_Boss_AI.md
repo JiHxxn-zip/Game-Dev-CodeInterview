@@ -13,13 +13,13 @@ Glasgavelen 보스는 공격 패턴 수가 많고, 각 패턴마다
 ---
 
 [🔗 DamageObject.h](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.h)  
-[🔗 Quest.cpp](../Scripts/Quest/Quest.cpp)
+[🔗 DamageObject.cpp](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.cpp)
 
-[🔗 Quest_Manager.h](../Scripts/Quest/Quest_Manager.h)  
-[🔗 Quest_Manager.cpp](../Scripts/Quest/Quest_Manager.cpp)
+[🔗 GlasgavelenStateAttack.h](../Scripts/Glasgavelen%20Boss%20AIt/GlasgavelenStateAttack.h)  
+[🔗 GlasgavelenStateIAttack.cpp](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenStateIAttack.cpp)
 
-[🔗 Objective.h](../Scripts/Quest/Objective.h)  
-[🔗 Objective_MonsterKill.cpp](../Scripts/Quest/Objective_MonsterKill.cpp)
+[🔗 GlasgavelenDefaultAttack.h](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenDefaultAttack.h)  
+[🔗 GlasgavelenDefaultAttack.cpp](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenDefaultAttack.cpp)
 
 ---
 
