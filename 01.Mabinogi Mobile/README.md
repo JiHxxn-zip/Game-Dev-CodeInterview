@@ -23,8 +23,8 @@
 > 새로운 퀘스트 타입을 코드 수정 최소화로 확장할 수 있도록 설계했습니다.
 
 [🔗 2. Glasgavelen Boss AI](./doc/Glasgavelen_Boss_AI.md)
-> 20개 이상의 상태 클래스로 FSM을 구성하고,<br>
-> 페이즈 전환 시 패턴 큐를 교체하는 방식으로 보스 전투 흐름을 구조화했습니다.
+> 다수의 패턴을 FSM 상태 객체로 분리하고,<br>
+> 공격 판정은 `DamageObject`로 독립시켜 전투 흐름과 히트 처리를 분리했습니다.
 
 [🔗 3. Hit / Collider Framework](./doc/Hit_Collider_Framework.md)
 > TriggerCollider, PhysicsCollider, Rigidbody를 분리하여<br>
