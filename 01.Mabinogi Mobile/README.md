@@ -27,5 +27,5 @@
 > 공격 판정은 `DamageObject`로 독립시켜 전투 흐름과 히트 처리를 분리했습니다.
 
 [🔗 3. Hit / Collider Framework](./doc/Hit_Collider_Framework.md)
-> `TriggerCollider`, `PhysicsCollider`, `Rigidbody`를 역할별로 분리하고,<br>
-> `Hit_Manager`와 `Collision_Manager`를 나눠 전투 판정과 일반 충돌 처리를 분리했습니다.
+> `TriggerCollider`는 공격 판정, `PhysicsCollider`는 일반 충돌 대상을 담당하고,<br>
+> `Hit_Manager`와 `Collision_Manager`를 분리해 전투 판정과 일반 충돌을 나눴습니다.
