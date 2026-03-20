@@ -18,7 +18,25 @@
 ### 객체 구성과 컴포넌트 구조
 - [🔗 GameObject.h](../Scripts/Core%20Framework/GameObject.h)
 - [🔗 GameObject.cpp](../Scripts/Core%20Framework/GameObject.cpp)
- 
+
+### 충돌 판정 
+- [🔗 Collider.h](../Scripts/Core%20Framework/Collider.h)  
+- [🔗 Collider.cpp](../Scripts/Core%20Framework/Collider.cpp)  
+- [🔗 PhysicsCollider.h](../Scripts/Core%20Framework/PhysicsCollider.h)  
+- [🔗 TriggerCollider.h](../Scripts/Core%20Framework/TriggerCollider.h)
+
+### 충돌 처리 흐름
+- [🔗 Collision_Manager.h](../Scripts/Core%20Framework/Collision_Manager.h)  
+- [🔗 Collision_Manager.cpp](../Scripts/Core%20Framework/Collision_Manager.cpp)
+
+### 이동 및 물리 처리
+- [🔗 Rigidbody.h](../Scripts/Core%20Framework/Rigidbody.h)  
+- [🔗 Rigidbody.cpp](../Scripts/Core%20Framework/Rigidbody.cpp)
+
+### Thread Manager
+- [🔗 Thread_Manager.h](../Scripts/Core%20Framework/Thread_Manager.h)  
+- [🔗 Thread_Manager.cpp](../Scripts/Core%20Framework/Thread_Manager.cpp)
+
 ---
 
 ## 핵심 구조
