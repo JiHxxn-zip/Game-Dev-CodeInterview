@@ -17,9 +17,8 @@
 ### 공격 범위 표현
 - [🔗 TriggerCollider.h](../Scripts/Combat/TriggerCollider.h)
 
-### 공격 오브젝트 공통 구조
-- [🔗 DamageObject.h](../Scripts/Combat/DamageObject.h)
-- [🔗 DamageObject.cpp](../Scripts/Combat/DamageObject.cpp)
+### 전투 규칙과 데미지 계산
+- [🔗 CombatComponent.cpp](../Scripts/Combat/CombatComponent.cpp)
 
 ---
 
