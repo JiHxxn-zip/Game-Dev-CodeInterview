@@ -15,10 +15,6 @@ public:
     virtual HRESULT Initialize(void* pArg) override;
     virtual void Update(_fmatrix WorldMatrix) override;
 
-//public:
-//    void Set_RingSize(_float fInner, _float fOuter);
-//    void GrowRing(_float fDeltaTime);
-
 public:
     // 트리거 콜라이더 특화 기능
     void Set_AttackRange(_float3 vExtents) { m_vAttackRange = vExtents; }
