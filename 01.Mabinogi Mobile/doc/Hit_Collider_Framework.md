@@ -55,7 +55,7 @@ void CHit_Manager::Start_Attack(const AttackerInfo& info)
     m_Attackers[pTriggerCollider] = info;
 }
 ```
-> 이 구조에서는 공격이 단순히 충돌체가 존재하는 상태가 아니라,
+> 이 구조에서는 공격이 단순히 충돌체가 존재하는 상태가 아니라,<br>
 > 명시적으로 시작되고 종료되는 활성 공격 단위로 관리됩니다.
 
 ---
@@ -250,8 +250,8 @@ void Client::CBardBardsTail::Update(_float fTimeDelta)
 ## Design Notes
 
 ### 핵심
-이 시스템에서 가장 중요하게 본 부분은
-공격 판정을 단순 Trigger 이벤트가 아니라, 수명을 가진 공격 단위로 관리하는 것 이었습니다.
+이 시스템에서 가장 중요하게 본 부분은 공격 판정을 단순 Trigger 이벤트가 아니라,<br>
+수명을 가진 공격 단위로 관리하는 것 이었습니다.
 
 즉 공격은
 - 시작 시 등록되고
