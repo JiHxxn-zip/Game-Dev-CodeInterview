@@ -27,8 +27,6 @@ CCollider::CCollider(const CCollider& Prototype)
 
 CCollider::~CCollider()
 {
-    /*delete(m_pOwner);
-    m_pOwner = nullptr;*/
 }
 
 HRESULT CCollider::Initialize_Prototype(COLLIDER eColliderType)
@@ -146,13 +144,7 @@ void CCollider::GrowRing(_float fDeltaTime, _float fGrowScale)
 
     _float newOuter = pRing->Get_OuterRadius() + fDeltaTime * fGrowScale;
     _float newInner = pRing->Get_InnerRadius() + fDeltaTime * fGrowScale;
-    //
-    //if (newOuter > 2.2f)
-    //    newOuter = 2.2f;
-    //
-    //if (newInner > 2.1f)
-    //    newInner = 2.1f;
-
+	
     pRing->Set_Radii(newInner, newOuter); // inner 고정
 }
 
