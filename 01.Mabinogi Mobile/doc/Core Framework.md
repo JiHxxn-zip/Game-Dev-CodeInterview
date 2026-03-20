@@ -14,12 +14,20 @@
 다른 시스템에 영향을 최소화할 수 있도록 구성했습니다.
 
 ---
+수정 중  
+### 객체 구성과 컴포넌트 구조
+- [🔗 GameObject.h](../Scripts/Core%20Framework/GameObject.h)
+- [🔗 GameObject.cpp](../Scripts/Core%20Framework/GameObject.cpp)
+ 
+---
 
 ## 핵심 구조
 - GameObject와 Component 구조
   - 모든 객체는 `CGameObject`를 기반으로 생성
   - 기능은 `Component`를 통해 확장
   - Transform, Collider, Rigidbody 등을 조합하여 객체 구성
+
+---
 
 ### 1. GameObject와 Component 구조
 ```cpp
