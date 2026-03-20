@@ -49,19 +49,6 @@ void CRigidbody::Update(_float fTimeDelta, shared_ptr<CNavigation> pNavigation)
     if (speed > m_fMaxSpeed)
         m_vVelocity = XMVector3Normalize(m_vVelocity) * m_fMaxSpeed;
 
-    // 감속 (x, z만)
-    //_vector vHorizontal = XMVectorSet(m_vVelocity.m128_f32[0], 0.f, m_vVelocity.m128_f32[2], 0.f);
-    //_float fHorizontalSpeed = XMVectorGetX(XMVector3Length(vHorizontal));
-    //if (fHorizontalSpeed > 0.f)
-    //{
-    //    _float newSpeed = max(0.f, fHorizontalSpeed - m_fDrag * fTimeDelta);
-    //    _vector dir = XMVector3Normalize(vHorizontal);
-    //    vHorizontal = dir * newSpeed;
-    //}
-
-    //_float y = m_vVelocity.m128_f32[1];
-    //m_vVelocity = XMVectorSet(XMVectorGetX(vHorizontal), y, XMVectorGetZ(vHorizontal), 0.f);
-
     // 위치 반영
     _vector vPos = m_pTransform->Get_State(CTransform::STATE_POSITION);
     _vector vOldPosition = vPos;
