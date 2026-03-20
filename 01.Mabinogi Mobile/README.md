@@ -29,3 +29,7 @@
 [🔗 3. Combat System](./doc/Combat%20System.md)
 > `TriggerCollider`는 공격 판정, `PhysicsCollider`는 일반 충돌 대상을 담당하고,<br>
 > `Hit_Manager`와 `Collision_Manager`를 분리해 전투 판정과 일반 충돌을 나눴습니다.
+
+[🔗 4. Core Framework](./doc/Core%20Framework.md)
+> `GameObject`, `Collider`, `Rigidbody`, `ThreadPool`을 분리해<br>
+> 객체 생명주기, 충돌/이동 처리, 비동기 작업 실행을 독립적으로 관리했습니다.
