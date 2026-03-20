@@ -26,6 +26,6 @@
 > 다수의 패턴을 FSM 상태 객체로 분리하고,<br>
 > 공격 판정은 `DamageObject`로 독립시켜 전투 흐름과 히트 처리를 분리했습니다.
 
-[🔗 3. Combat%20Hit](./doc/Hit_Collider_Framework.md)
+[🔗 3. Combat Hit](./doc/Hit_Collider_Framework.md)
 > `TriggerCollider`는 공격 판정, `PhysicsCollider`는 일반 충돌 대상을 담당하고,<br>
 > `Hit_Manager`와 `Collision_Manager`를 분리해 전투 판정과 일반 충돌을 나눴습니다.
