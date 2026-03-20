@@ -11,15 +11,15 @@
 ---
 
 ### 전투 판정 관리
-- [🔗 Hit_Manager.h](../Scripts/Combat%20Hit/Hit_Manager.h)
-- [🔗 Hit_Manager.cpp](../Scripts/Combat%20Hit/Hit_Manager.cpp)
+- [🔗 Hit_Manager.h](../Scripts/Combat/Hit_Manager.h)
+- [🔗 Hit_Manager.cpp](../Scripts/Combat/Hit_Manager.cpp)
 
 ### 공격 범위 표현
-- [🔗 TriggerCollider.h](../Scripts/Combat%20Hit/TriggerCollider.h)
+- [🔗 TriggerCollider.h](../Scripts/Combat/TriggerCollider.h)
 
 ### 공격 오브젝트 공통 구조
-- [🔗 DamageObject.h](../Scripts/Combat%20Hit/DamageObject.h)
-- [🔗 DamageObject.cpp](../Scripts/Combat%20Hit/DamageObject.cpp)
+- [🔗 DamageObject.h](../Scripts/Combat/DamageObject.h)
+- [🔗 DamageObject.cpp](../Scripts/Combat/DamageObject.cpp)
 
 ---
 
