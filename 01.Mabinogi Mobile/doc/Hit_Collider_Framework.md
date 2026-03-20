@@ -10,6 +10,18 @@
 
 ---
 
+수정 중
+[🔗 DamageObject.h](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.h)  
+[🔗 DamageObject.cpp](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.cpp)
+
+[🔗 GlasgavelenStateAttack.h](../Scripts/Glasgavelen%20Boss%20AIt/GlasgavelenStateAttack.h)  
+[🔗 GlasgavelenStateIAttack.cpp](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenStateIAttack.cpp)
+
+[🔗 GlasgavelenDefaultAttack.h](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenDefaultAttack.h)  
+[🔗 GlasgavelenDefaultAttack.cpp](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenDefaultAttack.cpp)
+
+---
+
 ## 핵심 구조
 - `CTriggerCollider`
   - 공격 판정 범위를 표현
