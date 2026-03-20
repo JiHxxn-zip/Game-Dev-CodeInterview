@@ -31,5 +31,5 @@
 > `Hit_Manager`와 `Collision_Manager`를 분리해 전투 판정과 일반 충돌을 나눴습니다.
 
 [🔗 4. Core Framework](./doc/Core%20Framework.md)
-> `GameObject`, `Collider`, `Rigidbody`, `ThreadPool`을 분리해<br>
-> 객체 생명주기, 충돌/이동 처리, 비동기 작업 실행을 독립적으로 관리했습니다.
+> `GameObject`를 중심으로 `Component`, `Collider`, `Rigidbody`, `ThreadPool`을 분리해<br>
+> 객체 구성, 충돌/이동 처리, 작업 실행 흐름을 독립적으로 관리했습니다.
