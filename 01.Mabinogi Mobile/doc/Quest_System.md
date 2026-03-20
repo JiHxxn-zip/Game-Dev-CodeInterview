@@ -296,7 +296,9 @@ if (m_pCurrentObjective->OnEvent(type, value) && m_pCurrentObjective->IsComplete
 ```
 > 현재 구조에서는 Objective 완료 후의 후속 처리를 CQuest가 담당하고 있으며,  
 > 장기적으로는 UI 처리와 보상 처리를 별도 시스템으로 분리해 책임을 더 명확히 나눌 수 있습니다.
+
 ---
+
 ## Design Notes
 
 ### 핵심
