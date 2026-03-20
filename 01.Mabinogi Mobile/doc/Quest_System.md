@@ -1,4 +1,4 @@
-# Quest System
+# 개요
 
 ## Overview
 이 시스템은 JSON 기반 퀘스트 데이터를 로드한 뒤,  
@@ -22,7 +22,7 @@
 
 ---
 
-## Core Design
+## 핵심 구조
 - `CQuest_Manager`
   - JSON 파일 재귀 로드
   - `strQuestType`에 따라 Objective 인스턴스 생성
