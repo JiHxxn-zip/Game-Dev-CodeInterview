@@ -175,7 +175,7 @@ void CGlasgavelenDefaultAttack::OnHit(shared_ptr<CGameObject> pTarget)
 
 ---
 
-## Why I Split Them
+## 책임을 분리한 이유
 이 구조에서 얻고 싶었던 핵심은  
 상태 객체가 공격 판정 디테일까지 떠안지 않게 하는 것 이었습니다.
 
