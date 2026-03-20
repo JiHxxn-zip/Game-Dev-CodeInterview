@@ -146,7 +146,8 @@ void CQuest::NotifyEvent(const wstring& type, const wstring& value)
 > - 현재 진행 중인 Objective가 아니면 처리하지 않음
 > - Objective가 이벤트를 받을 수 있는 상태인지 먼저 확인  
 > - 이벤트 타입이 일치할 때만 진행도 갱신  
-> - 완료 시에만 후속 처리 실행  
+> - 완료 시에만 후속 처리 실행
+
 > 즉, 이벤트 전달은 공통화하고, 이벤트 해석은 Objective에 위임하는 구조입니다.
 
 ---
