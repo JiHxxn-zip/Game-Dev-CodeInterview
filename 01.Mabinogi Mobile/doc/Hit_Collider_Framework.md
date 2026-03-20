@@ -10,15 +10,16 @@
 
 ---
 
-수정 중
-[🔗 DamageObject.h](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.h)  
-[🔗 DamageObject.cpp](../Scripts/Glasgavelen%20Boss%20AI/DamageObject.cpp)
+### 전투 판정 관리
+- [🔗 Hit_Manager.h](../Scripts/Combat%20Hit/Hit_Manager.h)
+- [🔗 Hit_Manager.cpp](../Scripts/Combat%20Hit/Hit_Manager.cpp)
 
-[🔗 GlasgavelenStateAttack.h](../Scripts/Glasgavelen%20Boss%20AIt/GlasgavelenStateAttack.h)  
-[🔗 GlasgavelenStateIAttack.cpp](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenStateIAttack.cpp)
+### 공격 범위 표현
+- [🔗 TriggerCollider.h](../Scripts/Combat%20Hit/TriggerCollider.h)
 
-[🔗 GlasgavelenDefaultAttack.h](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenDefaultAttack.h)  
-[🔗 GlasgavelenDefaultAttack.cpp](../Scripts/Glasgavelen%20Boss%20AI/GlasgavelenDefaultAttack.cpp)
+### 공격 오브젝트 공통 구조
+- [🔗 DamageObject.h](../Scripts/Combat%20Hit/DamageObject.h)
+- [🔗 DamageObject.cpp](../Scripts/Combat%20Hit/DamageObject.cpp)
 
 ---
 
