@@ -29,12 +29,3 @@
   - `OnHit()`에서 데미지 정보 생성
   - `Process_Hit()` 호출
 
-```mermaid
-flowchart LR
-    Attacker[Attacker / DamageObject] --> Trigger[TriggerCollider]
-    Trigger --> StartAttack[GameInstance::Start_Attack]
-    StartAttack --> HitManager[Hit_Manager]
-    HitManager --> Check[Collision Check]
-    Check --> Notify[Attacker::OnHit]
-    Notify --> ProcessHit[GameInstance::Process_Hit]
-    ProcessHit --> TakeDamage[Target::Take_Damage]
