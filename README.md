@@ -1,4 +1,4 @@
-# Game-Dev-CodeInterview
+# Game-Dev-Architecture-Archive
 이 저장소는 게임 개발 과정에서 구조를 설계하고 개선해 온 기록을 담은 로직 아카이브입니다.
 
 ## 📂 Project Archive
